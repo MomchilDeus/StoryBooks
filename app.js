@@ -10,7 +10,9 @@ const auth = require('./routes/auth')
 
 const app = express()
 
-
+app.get('/dashboard', (req, res) => {
+    res.send('Authenticated and reached dashboard')
+})
 
 app.get('/', (req, res) => {
     res.send('Hello World')
