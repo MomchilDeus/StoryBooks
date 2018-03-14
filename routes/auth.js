@@ -13,4 +13,13 @@ router.get('/google/callback', passport.authenticate('google', {
     res.redirect('/dashboard')
 })
 
+router.get('/verify', (req, res) => {
+    // if we are authenticated we should have access to req.user
+    if(req.user) {
+        console.log(`The user is: ${req.user}`)
+    } else {
+        console.log('Not Authenticated')
+    }
+})
+
 module.exports = router
