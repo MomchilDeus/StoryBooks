@@ -16,7 +16,7 @@ module.exports = function(passport){
             // console.log(accessToken)
             // console.log(profile)
 
-            const image = profile.photos[0].value.substring(1, profile.photos[0].value.indexOf('?'))
+            const image = profile.photos[0].value.substring(0, profile.photos[0].value.indexOf('?'))
 
             const newUser = {
                 googleID: profile.id,
@@ -33,11 +33,11 @@ module.exports = function(passport){
             .then(user => {
                 if(user) {
                     // Return existing user
-                    console.log('returning existing user...')
+                    // console.log('returning existing user...')
                     done(null, user)
                 } else {
                     // Create new user
-                    console.log('creating new user...')
+                    // console.log('creating new user...')
                     new User(newUser)
                     .save()
                     .then(user => {

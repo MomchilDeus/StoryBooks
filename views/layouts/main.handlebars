@@ -1,6 +1,9 @@
 {{> _header}}
 
     {{> _navbar}}
+    {{#if user}}
+        {{> _add-btn}}
+    {{/if}}
     <main>
         <div class="container">
             {{{body}}}
