@@ -25,10 +25,4 @@ router.get('/about', (req, res) => {
     res.render('index/about')
 })
 
-// Logout Route
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/')
-})
-
 module.exports = router
